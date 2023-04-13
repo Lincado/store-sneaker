@@ -1,0 +1,329 @@
+:root {
+    --button: #FF0000;
+    --main-background:  #C4C4C4;
+    --background: #E5E5E5;
+    --white: #fff;
+    --text: #000;
+    --footer: #000;
+    --text-description: #9C9696;
+}
+
+* {
+    font-size: 62.5%;
+    font-family: Roboto, sans-serif, system-ui, -apple-system;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;   
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: 2.4rem;
+    color: var(--text);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows:  5rem 60rem 10rem;
+    grid-template-areas: "header header"
+                        "text-info gallery"
+                        "end-page end-page";
+    row-gap: 10rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    grid-area: header;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu li {
+    padding: 2rem;
+}
+
+.menu ul a {
+    display: block;
+    font-weight: bold;
+    position: relative;
+}
+
+.menu ul a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: .3rem;
+    top: 100%;
+    background-color: var(--button);
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+.research-shopping{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.research-shopping .search {
+    position: absolute;
+    z-index: 1;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.research-shopping img {
+    cursor: pointer;
+}
+
+.research-shopping input {
+    width: 18rem;
+    height: 4.5rem;
+    font-size: 1.8rem;
+    padding: 2rem 4rem;
+    position: relative;
+    border: none;
+    border-radius: .2rem;
+    
+}
+
+.research-shopping input::placeholder {
+    font-size: 1.8rem;
+}
+
+.container {
+    background-image: linear-gradient(to left,var(--main-background) 60%, var(--background) 40%);
+    min-height: 100vh;
+}
+
+.text-info {
+    max-width: 37rem;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    grid-area: text-info;
+}
+
+.text-info h1 {
+    color: var(--text);
+    font-size: 6rem;
+}
+
+.text-info p {
+    color: var(--text-description);
+    font-size: 1.6rem;
+}
+
+.info-buy {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    gap: 2rem;
+}
+
+.info-buy span {
+    color: var(--text);
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.btn-buy {
+    background: var(--button);
+    color: var(--white);
+    width: 25rem;
+    height: 9rem;
+    text-align: center;
+    padding: 3rem;
+}
+
+.btn-buy:hover {
+    background: var(--background);
+    color: var(--button);
+    border: .2rem solid var(--button);
+    transition: all 300ms ease-in-out;
+}
+
+.gallery {
+    position: relative;
+    display: flex;
+    max-width: 75rem;
+    justify-self: center;
+    flex-direction: column;    
+    align-self: center;
+    grid-area: gallery;
+}
+
+.main-img {
+    max-width: 59.7rem;
+    height: 51rem;
+}
+
+.main-img img{
+    width: 100%;
+    height: auto;
+}
+
+.arrow-left,
+.arrow-right {
+    position: absolute;
+    color: var(--white);
+    height: 18.4rem;
+    font-size: 3rem;
+    right: auto;
+    left: 0;
+    bottom: 0;
+    border: none;
+    transition: all 400ms ease-in-out;
+    background: linear-gradient(to left, transparent 0%, black 200%);
+    opacity: 0.3;
+}
+
+.arrow-right {
+    left: auto;
+    right: 0;
+    background: linear-gradient(to right, transparent 0%, black 200%);
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+    opacity: 1;
+}
+
+.wrapper-gallery {
+    display: flex;
+    max-width: 75rem;
+    overflow-x: auto;
+}
+
+.gallery-items {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+.wrapper-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+.wrapper-gallery {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.gallery-items:hover :not(:hover) {
+    opacity: .4;
+    transition: all 300ms ease-in-out;
+}
+
+.end-page {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1.5fr;
+    align-items: center;
+    grid-area: end-page;
+}
+
+.video-sneakers {
+    width: 25rem;
+    height: 16.6rem;
+}
+
+.video-sneakers img {
+    width: 100%;
+    height: auto;
+}
+
+.end-page nav {
+    background: var(--white);
+}
+
+.end-page ul {
+    display: flex;
+    width: 50rem;
+}
+
+.end-page li {
+    padding: 6.91rem 3rem;
+}
+
+.end-page li {
+    padding: 6.91rem 3rem;
+}
+
+.end-page li a {
+    position: relative;
+}
+
+.end-page li a:after{
+    content: "";
+    position: absolute;
+    color: var(--white);  
+    width: 0;
+    height: .3rem;
+    left: 0;
+    background: var(--button);
+    top: 100%;
+    transition: all 300ms ease-in-out;
+}
+
+.end-page li a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+.explore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--footer);
+    width: 43rem;
+    height: 16.6rem;
+    position: relative;
+}
+
+.explore::after {
+    content: url("../img/icon-arrow.svg");
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+.explore a{
+    color: var(--white);  
+    position: relative;
+}
+
+
+.explore  a::after{
+    content: "";
+    position: absolute;
+    color: var(--white);  
+    width: 0;
+    height: .3rem;
+    left: 0;
+    background: var(--white);
+    top: 3rem;
+    transition: all 300ms ease-in-out;
+}
+
+.explore a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+
